@@ -59,3 +59,5 @@
 .screenshotFrame{min-height:0;border:1px solid var(--line);border-radius:28px;background:white;box-shadow:0 18px 46px rgba(17,24,39,.10);overflow:auto;display:grid;place-items:start center}.screenshotFrame img{width:100%;height:auto;display:block}.serviceHighlights li{margin-bottom:5px}@media(max-height:780px) and (min-width:1101px){.screenshotFrame img{width:96%}.serviceHighlights li{font-size:11.6px}}
 /* SmartScheduler V2: sandboxed real form iframe */
 .safeSchedulerFrame{position:relative}.safeSchedulerFrame iframe{width:100%;height:100%;min-height:0;border:0}.safeOverlayNote{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,248,236,.96);border:1px solid #f2eadc;color:#775114;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;text-align:center;box-shadow:0 10px 22px rgba(17,24,39,.08);pointer-events:none}
+/* Content Autopilot screenshot treatment */
+.contentAutopilotShot{background:#f8fafc;place-items:center;overflow:auto}.contentAutopilotShot img{width:100%;height:auto;max-height:none;border-radius:18px}
