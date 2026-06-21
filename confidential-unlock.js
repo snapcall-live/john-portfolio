@@ -20,7 +20,7 @@
       el.hidden = !unlocked;
     });
     document.querySelectorAll('[data-confidential-trigger]').forEach(btn => {
-      btn.textContent = unlocked ? 'Confidential proof unlocked' : 'Unlock confidential proof';
+      btn.textContent = unlocked ? 'Confidential info unlocked' : 'Unlock confidential info';
       btn.setAttribute('aria-pressed', unlocked ? 'true' : 'false');
       btn.classList.toggle('unlocked', unlocked);
     });
@@ -49,6 +49,8 @@
     button.type = 'button';
     button.className = 'confidentialUnlockBtn';
     button.setAttribute('data-confidential-trigger', '');
+    button.setAttribute('title', 'Enter the access code to view semi-confidential information, including reviews and other performance data.');
+    button.setAttribute('aria-label', 'Unlock confidential information, including reviews and other performance data');
     button.addEventListener('click', promptForCode);
     nav.appendChild(button);
   }
