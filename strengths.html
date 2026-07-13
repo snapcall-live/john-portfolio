@@ -133,6 +133,18 @@
                 <ul id="eAchievements"></ul>
               </div>
               <div>
+                <h3>Recommendations</h3>
+                <div class="strengthRecommendation">
+                  <p id="eRecommendationQuote"></p>
+                  <small id="eRecommendationSource"></small>
+                  <div class="strengthRecommendationControls">
+                    <button type="button" id="strengthRecPrev">Prev</button>
+                    <span id="strengthRecCount">1 / 15</span>
+                    <button type="button" id="strengthRecNext">Next</button>
+                  </div>
+                </div>
+              </div>
+              <div>
                 <h3>Proof</h3>
                 <ul id="eProof"></ul>
               </div>
@@ -514,6 +526,104 @@
         summary: document.getElementById("eSummary"),
         ach: document.getElementById("eAchievements"),
         proof: document.getElementById("eProof"),
+        recQuote: document.getElementById("eRecommendationQuote"),
+        recSource: document.getElementById("eRecommendationSource"),
+        recCount: document.getElementById("strengthRecCount"),
+      };
+      const recommendations = [
+        {
+          quote:
+            "As CRO at airSlate, I had a direct view of John as he built the airSlate Partner Program from the ground up... He is a proven builder, strategist, and leader.",
+          source: "Ergun Ekici - AI, Product & GTM Leader",
+        },
+        {
+          quote:
+            "I can confidently say he is the best manager I've ever worked with. John brings a rare combination of strategic vision, undeniable competence, and truly inspiring leadership.",
+          source: "Lidiia Sobolenko - Director of Partnership at airSlate",
+        },
+        {
+          quote:
+            "Under his guidance, our team was able to achieve sales targets that were unprecedented in the Channel's history.",
+          source: "Kyle Keim - Strategic Channel Partnerships Manager",
+        },
+        {
+          quote:
+            "John has been absolutely instrumental to the success of our Agent Program at Spireon... He clearly has a deep understanding of Partner Channels.",
+          source: "Mark Van Dyke - Partner Channel Professional",
+        },
+        {
+          quote:
+            "John has all the qualities of an effective leader; humble, hard-working, and always focused on uniting people in order to move the needle.",
+          source: "Summer Reyes - Channel Marketing",
+        },
+        {
+          quote:
+            "At Omnitracs I watched him expertly transform our demand generation capabilities and optimize our sales and marketing funnel to maximize revenue.",
+          source: "Amanda Ramsey - Marketing Communications",
+        },
+        {
+          quote:
+            "John has one of those systemic minds that can see the whole of the business in all of its complexity and then drill down in any area to its actionable details.",
+          source: "Wes Parker - Enterprise Leadership Consultant",
+        },
+        {
+          quote:
+            "His efforts caused an absolute explosion of qualified sales-ready leads that helped us nearly double our organic revenue attainment in his first year.",
+          source: "Steven Dwight - Transportation Technologist",
+        },
+        {
+          quote:
+            "John's efforts have produced extensive results that have served as a platform for the success of my team.",
+          source: "Peter Sim - Revenue professional",
+        },
+        {
+          quote:
+            "John is one of the smartest and most capable marketers I know. He is an expert at leveraging technology to drive customer acquisition.",
+          source: "Austin Schmidt - VP, Marketing",
+        },
+        {
+          quote:
+            "John made significant contributions to the success of the company in the areas of lead generation, Web marketing and sales... I would hire John again.",
+          source: "Jim Arnold - Direct manager",
+        },
+        {
+          quote:
+            "The level of detail in his work shows his dedication... Garnering buy-in and support for the projects that he took on was one of John's key skills.",
+          source: "Karen Miles Fezzey - Colleague",
+        },
+        {
+          quote:
+            "John is a major catalyst of growth... helped lay the foundation for future growth by developing and successfully launching our Database-as-a-Service solution.",
+          source: "Christopher Cadieux - Practice Manager",
+        },
+        {
+          quote:
+            "John's efforts have directly influenced $2M+ in new revenue... He has demonstrated an ability to identify and understand a broad scope of business challenges.",
+          source: "Rick Toma - EVP, Business Development",
+        },
+        {
+          quote:
+            "John quickly became my go-to person for channel-related questions and my guide for navigating internal bureaucracies and challenging personalities.",
+          source: "Matt Benson - Business Strategist",
+        },
+      ];
+      let activeStrengthRecommendation = 0;
+      let strengthRecommendationTimer;
+      function renderRecommendation(index, manual = false) {
+        activeStrengthRecommendation =
+          (index + recommendations.length) % recommendations.length;
+        const rec = recommendations[activeStrengthRecommendation];
+        els.recQuote.textContent = `“${rec.quote}”`;
+        els.recSource.textContent = rec.source;
+        els.recCount.textContent = `${activeStrengthRecommendation + 1} / ${recommendations.length}`;
+        if (manual) restartStrengthRecommendationTimer();
+      }
+      function restartStrengthRecommendationTimer() {
+        window.clearInterval(strengthRecommendationTimer);
+        strengthRecommendationTimer = window.setInterval(
+          () => renderRecommendation(activeStrengthRecommendation + 1),
+          7500,
+        );
       }
       function render(key) {
         const e = evidence[key];
@@ -529,7 +639,13 @@
         s.onmouseenter = () => render(s.dataset.key);
         s.onclick = () => render(s.dataset.key);
       });
+      document.getElementById("strengthRecPrev").onclick = () =>
+        renderRecommendation(activeStrengthRecommendation - 1, true);
+      document.getElementById("strengthRecNext").onclick = () =>
+        renderRecommendation(activeStrengthRecommendation + 1, true);
       render("channel");
+      renderRecommendation(0);
+      restartStrengthRecommendationTimer();
     </script>
     <script src="confidential-unlock.js"></script>
   </body>
