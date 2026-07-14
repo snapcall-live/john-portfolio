@@ -93,3 +93,74 @@
 /* Timeline V15: fixed desktop stage with internal scrolling for long role details */
 @media(min-width:1101px){.timelinePage{height:100vh;overflow:hidden}.timelineScreen.timelineV3{height:calc(100vh - 108px);min-height:650px;overflow:hidden}.spotlight{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.56fr);max-height:none;height:calc(100% - 226px);overflow:hidden}.spotlight>div,.recommendation{min-height:0;overflow:auto}.spotlight .lead{font-size:14px;line-height:1.34;margin:8px 0}.spotMetrics{gap:6px;margin-top:10px}.spotMetrics .metric{font-size:10.8px;line-height:1.18;border-radius:14px}.awards li{font-size:12px;line-height:1.24;margin-bottom:5px}.recommendation blockquote,#spotQuote p{font-size:12.5px;line-height:1.28}.spotlight h1{font-size:clamp(28px,3vw,40px)}.spotlight h3{font-size:17px;margin-bottom:8px}.founderSpot{height:calc(100% - 226px)}.founderSpot .spotBrand{padding-right:250px}.founderSpot .spotBrand h1{margin-bottom:4px}.founderSpot .lead{font-size:13px;line-height:1.28;max-width:1180px}.founderSpot .ventureGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.founderSpot .ventureGrid section{padding:10px;min-width:0}.founderSpot .ventureGrid section .ventureTitle img{width:68px;height:56px}.founderSpot .ventureTitle h3{font-size:15px}.founderSpot .ventureGrid section>p,.founderSpot .ventureAccomplishments li{font-size:11px;line-height:1.24}.founderSpot .ventureAccomplishments{margin-top:6px;padding-top:6px}.founderSpot .ventureGrid section a{font-size:11px;padding:6px 8px}.bottomTimeline{height:168px;bottom:18px}.node{height:118px;min-height:118px;overflow:visible}.node span{overflow-wrap:anywhere}.node[data-role="founder"] b{font-size:11px}.node[data-role="founder"] span{font-size:9.4px;line-height:1.08}.evidenceCard a{color:#fff;text-decoration:underline;text-underline-offset:3px}}
 @media(max-height:780px) and (min-width:1101px){.timelineScreen.timelineV3{height:calc(100vh - 88px);min-height:0}.spotlight,.founderSpot{height:calc(100% - 190px)}.spotlight{top:24px}.spotlight h1{font-size:30px}.spotlight .lead{font-size:12.5px}.spotMetrics .metric{font-size:9.8px}.founderSpot .spotBrand{padding-right:220px}.founderSpot .ventureGrid section .ventureTitle img{width:54px;height:46px}.founderSpot .ventureGrid section>p,.founderSpot .ventureAccomplishments li{font-size:10px}.bottomTimeline{height:142px}.node{height:104px;min-height:104px}.node[data-role="founder"] span{font-size:8.8px}.connector{bottom:158px;height:58px}}
+/* Timeline V16: no internal scrollbars; larger fixed spotlight above lower timeline rail */
+@media(min-width:1101px){
+  .timelinePage{height:100vh;overflow:hidden}
+  .timelineScreen.timelineV3{height:calc(100vh - 108px);min-height:650px;overflow:hidden;padding:18px 22px 12px}
+  .spotlight,.spotlight.founderSpot{top:20px;width:calc(100% - 44px);height:calc(100% - 176px);max-height:none;overflow:hidden;padding:18px 20px;border-radius:28px}
+  .spotlight{grid-template-columns:minmax(0,1fr) minmax(250px,.38fr);gap:14px}
+  .spotlight>div,.recommendation{min-height:0;overflow:hidden}
+  .spotlight h1{font-size:clamp(27px,2.65vw,38px);line-height:.95;margin:4px 0 5px}
+  .spotlight h3{font-size:15px;margin-bottom:5px}
+  .spotlight .lead{font-size:12.5px;line-height:1.24;margin:5px 0;max-width:none}
+  .spotLogoWrap{margin-bottom:6px;padding:6px;border-radius:14px}
+  .spotLogoWrap .spotLogo{width:82px;max-height:42px}
+  .companyRow{gap:8px}
+  .spotMetrics{gap:5px;margin-top:7px}
+  .spotMetrics .metric{font-size:9.7px;line-height:1.14;padding:4px 6px;border-radius:12px}
+  .recommendation{padding:12px;border-radius:0 18px 18px 0;gap:8px}
+  .awards{margin:5px 0 0;padding-left:15px}
+  .awards li{font-size:10.3px;line-height:1.14;margin-bottom:3px}
+  .recommendation blockquote,#spotQuote p{font-size:10.8px;line-height:1.18;margin-bottom:6px}
+  .bottomTimeline{height:134px;bottom:10px;gap:8px;padding-top:24px}
+  .bottomTimeline .rail{top:17px}
+  .node{height:98px;min-height:98px;padding:10px 8px 8px;border-radius:18px}
+  .node:before{top:-17px}
+  .nodeLogo{width:34px;height:22px;margin-bottom:5px}
+  .node b{font-size:10.6px;line-height:1.08}
+  .node span{font-size:9.6px;line-height:1.08;margin-top:5px}
+  .node small{font-size:9.2px;margin-top:5px}
+  .node[data-role="founder"] b{font-size:9.8px}
+  .node[data-role="founder"] span{font-size:8.3px;line-height:1.03}
+  .connector{bottom:144px;height:42px}
+  .founderSpot{grid-template-columns:1fr}
+  .founderSpot .spotBrand{padding-right:250px}
+  .founderSpot .companyRow{right:16px;top:14px}
+  .founderSpot .lead{font-size:11.5px;line-height:1.18;margin:4px 0}
+  .founderSpot .ventureGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:7px}
+  .founderSpot .ventureGrid section{padding:8px;min-width:0;border-radius:14px}
+  .founderSpot .ventureGrid section .ventureTitle img{width:46px;height:38px;border-radius:12px;padding:5px}
+  .founderSpot .ventureTitle{gap:7px;margin-bottom:5px}
+  .founderSpot .ventureTitle h3{font-size:13px}
+  .founderSpot .ventureGrid section>p,.founderSpot .ventureAccomplishments li{font-size:9.6px;line-height:1.13}
+  .founderSpot .ventureAccomplishments{margin-top:5px;padding-top:5px}
+  .founderSpot .ventureAccomplishments b{font-size:9px;margin-bottom:3px}
+  .founderSpot .ventureAccomplishments ul{padding-left:13px}
+  .founderSpot .ventureGrid section a{font-size:9.5px;padding:4px 7px;margin-top:5px}
+  .aiTourBtn{font-size:11px;padding:6px 8px 6px 10px}
+  .aiTourBtn strong{padding:5px 8px}
+}
+@media(max-height:780px) and (min-width:1101px){
+  .timelineScreen.timelineV3{height:calc(100vh - 88px);min-height:0}
+  .spotlight,.spotlight.founderSpot{height:calc(100% - 154px);top:16px;padding:14px 16px}
+  .spotlight h1{font-size:28px}.spotlight .lead{font-size:10.8px;line-height:1.14}
+  .spotMetrics .metric{font-size:8.8px}
+  .awards li{font-size:9px}.recommendation blockquote,#spotQuote p{font-size:9.4px}
+  .bottomTimeline{height:116px;bottom:8px}.node{height:86px;min-height:86px}.connector{bottom:124px;height:34px}
+  .founderSpot .lead{font-size:9.8px}.founderSpot .ventureGrid section>p,.founderSpot .ventureAccomplishments li{font-size:8.4px}
+  .founderSpot .ventureGrid section .ventureTitle img{width:38px;height:32px}.founderSpot .ventureTitle h3{font-size:11px}
+}
+/* Timeline V17: explicit viewport sizing after layered timeline overrides */
+@media(min-width:1101px){
+  .timelineScreen.timelineV3{position:relative}
+  .spotlight,.spotlight.founderSpot{position:absolute!important;top:24px!important;height:430px!important;max-height:none!important}
+  .bottomTimeline{bottom:8px!important;height:150px!important}
+  .bottomTimeline{z-index:4!important}
+  .bottomTimeline .rail,.node{z-index:5!important}
+  .connector{bottom:158px!important}
+}
+@media(max-height:780px) and (min-width:1101px){
+  .spotlight,.spotlight.founderSpot{top:18px!important;height:330px!important}
+  .bottomTimeline{height:124px!important;bottom:6px!important}
+  .connector{bottom:132px!important}
+}
