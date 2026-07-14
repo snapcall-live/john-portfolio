@@ -164,3 +164,87 @@
   .bottomTimeline{height:124px!important;bottom:6px!important}
   .connector{bottom:132px!important}
 }
+
+/* Timeline V18: bottom-lock rail and reduce wasted space on wide screens */
+@media(min-width:1101px){
+  .timelineScreen.timelineV3{
+    padding:18px 24px 22px!important;
+  }
+  .bottomTimeline{
+    position:absolute!important;
+    bottom:22px!important;
+    height:142px!important;
+    left:24px!important;
+    right:24px!important;
+  }
+  .connector{
+    bottom:164px!important;
+    height:42px!important;
+  }
+  .spotlight{
+    position:absolute!important;
+    left:var(--spot-left,24px)!important;
+    top:22px!important;
+    width:min(1080px,calc(100% - 48px))!important;
+    height:calc(100% - 206px)!important;
+  }
+  .spotlight.founderSpot{
+    position:absolute!important;
+    left:24px!important;
+    width:calc(100% - 48px)!important;
+    height:calc(100% - 206px)!important;
+  }
+  .founderSpot .spotBrand{
+    padding-right:0!important;
+  }
+  .founderSpot>div{
+    width:100%!important;
+    max-width:none!important;
+  }
+  .founderSpot .companyRow{
+    position:static!important;
+    justify-content:space-between!important;
+    align-items:center!important;
+    margin-bottom:4px;
+  }
+  .founderSpot .lead{
+    max-width:1180px!important;
+  }
+  .founderSpot .ventureGrid{
+    width:100%!important;
+    max-width:none!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    align-items:stretch;
+  }
+  .founderSpot .ventureGrid section{
+    display:flex;
+    flex-direction:column;
+  }
+  .founderSpot .ventureGrid section a{
+    margin-top:auto!important;
+    align-self:flex-start;
+  }
+}
+@media(min-width:1500px){
+  .spotlight{
+    width:min(1120px,58vw)!important;
+  }
+  .spotlight.founderSpot{
+    width:calc(100% - 48px)!important;
+  }
+}
+@media(max-height:780px) and (min-width:1101px){
+  .bottomTimeline{
+    position:absolute!important;
+    bottom:16px!important;
+    height:118px!important;
+  }
+  .connector{
+    bottom:134px!important;
+    height:34px!important;
+  }
+  .spotlight,.spotlight.founderSpot{
+    top:16px!important;
+    height:calc(100% - 168px)!important;
+  }
+}
