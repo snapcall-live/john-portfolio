@@ -1,0 +1,63 @@
+name: Deploy static portfolio to Google Cloud Storage
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+  GCS_BUCKET: ${{ vars.GCS_BUCKET }}
+  CDN_URL_MAP: ${{ vars.CDN_URL_MAP }}
+
+jobs:
+  deploy:
+    if: ${{ vars.GCP_PROJECT_ID != '' && vars.GCS_BUCKET != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+
+      - name: Upload static assets
+        run: |
+          gcloud storage rsync . "gs://${GCS_BUCKET}" \
+            --recursive \
+            --delete-unmatched-destination-objects \
+            --exclude="^\\.git/|^\\.github/|^README\\.md$"
+
+      - name: Set HTML cache policy
+        run: |
+          gcloud storage objects update "gs://${GCS_BUCKET}/**.html" \
+            --cache-control="public,max-age=60" || true
+
+      - name: Set asset cache policy
+        run: |
+          gcloud storage objects update "gs://${GCS_BUCKET}/**.css" \
+            --cache-control="public,max-age=3600" || true
+          gcloud storage objects update "gs://${GCS_BUCKET}/**.js" \
+            --cache-control="public,max-age=3600" || true
+          gcloud storage objects update "gs://${GCS_BUCKET}/**.pdf" \
+            --cache-control="public,max-age=86400" || true
+
+      - name: Invalidate Cloud CDN
+        if: ${{ vars.CDN_URL_MAP != '' }}
+        run: |
+          gcloud compute url-maps invalidate-cdn-cache "${CDN_URL_MAP}" \
+            --path="/*" \
+            --async
