@@ -495,3 +495,5 @@
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
   }
 }
+
+.resumeMiniLink{display:block;text-align:right;margin:-10px 0 14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none}.resumeMiniLink:hover{color:rgba(255,255,255,.8)}
