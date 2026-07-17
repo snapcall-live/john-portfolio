@@ -677,3 +677,37 @@
   .spotMetrics .metric{font-size:8.8px!important;padding:3px 5px!important}
   .founderSpot .spotBrand{padding-right:230px!important}
 }
+
+/* Timeline V25: use founder venture-card whitespace on wide monitors */
+@media(min-width:1500px) and (min-height:850px){
+  .founderSpot .ventureGrid section>p{
+    font-size:13.4px!important;
+    line-height:1.32!important;
+  }
+  .founderSpot .ventureAccomplishments b{
+    font-size:11.2px!important;
+  }
+  .founderSpot .ventureAccomplishments li{
+    font-size:12.2px!important;
+    line-height:1.28!important;
+    margin-bottom:5px!important;
+  }
+}
+@media(min-width:1800px) and (min-height:950px){
+  .founderSpot .ventureGrid section>p{
+    font-size:15px!important;
+    line-height:1.36!important;
+  }
+  .founderSpot .ventureAccomplishments b{
+    font-size:12.2px!important;
+  }
+  .founderSpot .ventureAccomplishments li{
+    font-size:13.4px!important;
+    line-height:1.32!important;
+    margin-bottom:6px!important;
+  }
+  .founderSpot .ventureGrid section a{
+    font-size:12.2px!important;
+    padding:7px 10px!important;
+  }
+}
