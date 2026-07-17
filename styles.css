@@ -577,3 +577,28 @@
   .bottomTimeline{gap:28px!important;height:170px!important}
   .connector{bottom:188px!important;height:48px!important}
 }
+
+/* Timeline V22: requested bottom-card spacing and vertical room */
+@media(min-width:1101px){
+  .node{height:133px!important;min-height:133px!important}
+  .bottomTimeline{height:184px!important}
+  .connector{bottom:202px!important}
+}
+@media(min-width:1500px) and (min-height:850px){
+  .bottomTimeline{gap:30px!important;height:175px!important}
+  .node{height:139px!important;min-height:139px!important}
+  .connector{bottom:193px!important}
+  .spotlight,.spotlight.founderSpot{height:calc(100% - 221px)!important}
+}
+@media(min-width:1800px) and (min-height:950px){
+  .bottomTimeline{gap:30px!important;height:185px!important}
+  .node{height:151px!important;min-height:151px!important}
+  .connector{bottom:203px!important}
+  .spotlight,.spotlight.founderSpot{height:calc(100% - 225px)!important}
+}
+@media(max-height:780px) and (min-width:1101px){
+  .node{height:119px!important;min-height:119px!important}
+  .bottomTimeline{height:151px!important}
+  .connector{bottom:159px!important}
+  .spotlight,.spotlight.founderSpot{height:calc(100% - 183px)!important}
+}
