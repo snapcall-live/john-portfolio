@@ -497,3 +497,57 @@
 }
 
 .resumeMiniLink{display:block;text-align:right;margin:-10px 0 14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none}.resumeMiniLink:hover{color:rgba(255,255,255,.8)}
+
+/* Timeline V20: large-monitor proportional desktop layout */
+@media(min-width:1500px) and (min-height:850px){
+  .timelineScreen.timelineV3{
+    padding:22px 36px 26px!important;
+  }
+  .spotlight{
+    top:26px!important;
+    width:min(1320px,calc(100% - 72px))!important;
+    height:calc(100% - 226px)!important;
+    grid-template-columns:minmax(0,1.08fr) minmax(330px,.48fr)!important;
+    gap:22px!important;
+    padding:32px!important;
+  }
+  .spotlight.founderSpot{
+    width:calc(100% - 72px)!important;
+    height:calc(100% - 226px)!important;
+  }
+  .spotLogoWrap .spotLogo{width:132px;max-height:66px}
+  .spotLogoWrap{margin-bottom:16px;padding:10px;border-radius:20px}
+  .spotlight h1{font-size:clamp(42px,3.45vw,62px)!important;line-height:.94;margin:8px 0 8px}
+  .spotlight h3,.founderSpot #spotCompany{font-size:21px!important;line-height:1.08;margin-bottom:10px}
+  .spotlight .lead{font-size:clamp(17px,1.02vw,20px)!important;line-height:1.34!important;margin:10px 0;max-width:none}
+  .spotMetrics{gap:9px;margin-top:18px}
+  .spotMetrics .metric{font-size:12.4px!important;line-height:1.22;padding:6px 9px}
+  .recommendation{padding:24px 22px!important;gap:18px!important}
+  .awards li{font-size:13.6px!important;line-height:1.25;margin-bottom:7px}
+  .recommendation blockquote,#spotQuote p{font-size:14.4px!important;line-height:1.25;margin-bottom:9px}
+  .bottomTimeline{
+    left:36px!important;right:36px!important;bottom:24px!important;height:164px!important;
+    gap:18px!important;padding-top:38px!important;
+  }
+  .bottomTimeline .rail{top:28px!important}
+  .connector{bottom:188px!important;height:54px!important}
+  .node{height:124px!important;min-height:124px!important;padding:14px 13px 12px!important;border-radius:20px}
+  .nodeLogo{width:42px;height:27px;margin-bottom:7px}
+  .node b{font-size:12.2px!important;line-height:1.1;min-height:30px}
+  .node span{font-size:10.8px!important;line-height:1.12;margin-top:6px}
+  .node small{font-size:10.4px!important;margin-top:auto}
+  .node[data-role="founder"] b{font-size:11.4px!important}
+  .node[data-role="founder"] span{font-size:9.8px!important;line-height:1.05}
+}
+
+@media(min-width:1800px) and (min-height:950px){
+  .spotlight{width:min(1480px,calc(100% - 72px))!important;padding:38px!important;grid-template-columns:minmax(0,1.1fr) minmax(380px,.48fr)!important}
+  .spotlight h1{font-size:clamp(52px,3.65vw,72px)!important}
+  .spotlight h3,.founderSpot #spotCompany{font-size:24px!important}
+  .spotlight .lead{font-size:clamp(19px,1.08vw,22px)!important;line-height:1.36!important}
+  .spotMetrics .metric{font-size:13.4px!important;padding:7px 10px}
+  .awards li{font-size:15px!important}.recommendation blockquote,#spotQuote p{font-size:16px!important;line-height:1.28}
+  .bottomTimeline{height:178px!important;gap:22px!important}
+  .node{height:136px!important;min-height:136px!important;padding:16px 15px 13px!important}
+  .node b{font-size:13.4px!important;min-height:32px}.node span{font-size:12px!important}.node small{font-size:11px!important}
+}
