@@ -602,3 +602,22 @@
   .connector{bottom:159px!important}
   .spotlight,.spotlight.founderSpot{height:calc(100% - 183px)!important}
 }
+
+/* Timeline V23: stretch bottom timeline cards across wide monitors */
+@media(min-width:1500px) and (min-height:850px){
+  .bottomTimeline{
+    width:auto!important;
+    left:18px!important;
+    right:18px!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:36px!important;
+  }
+}
+@media(min-width:1800px) and (min-height:950px){
+  .bottomTimeline{
+    width:auto!important;
+    left:18px!important;
+    right:18px!important;
+    gap:40px!important;
+  }
+}
