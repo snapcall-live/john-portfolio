@@ -711,3 +711,47 @@
     padding:7px 10px!important;
   }
 }
+
+/* Timeline V26: founder card fit after richer venture bullets */
+@media(min-width:1101px){
+  .founderSpot .ventureGrid section>p{
+    font-size:10.8px!important;
+    line-height:1.2!important;
+  }
+  .founderSpot .ventureAccomplishments li{
+    font-size:9.8px!important;
+    line-height:1.15!important;
+    margin-bottom:3px!important;
+  }
+  .founderSpot .ventureAccomplishments b{
+    font-size:9.8px!important;
+  }
+}
+@media(min-width:1500px) and (min-height:850px){
+  .founderSpot .ventureGrid section>p{
+    font-size:11.8px!important;
+    line-height:1.22!important;
+  }
+  .founderSpot .ventureAccomplishments li{
+    font-size:10.6px!important;
+    line-height:1.16!important;
+    margin-bottom:3px!important;
+  }
+  .founderSpot .ventureAccomplishments b{
+    font-size:10.2px!important;
+  }
+  .founderSpot .ventureGrid section{
+    padding:12px!important;
+  }
+}
+@media(min-width:1800px) and (min-height:950px){
+  .founderSpot .ventureGrid section>p{
+    font-size:13px!important;
+    line-height:1.24!important;
+  }
+  .founderSpot .ventureAccomplishments li{
+    font-size:11.4px!important;
+    line-height:1.18!important;
+    margin-bottom:4px!important;
+  }
+}
