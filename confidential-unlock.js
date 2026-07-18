@@ -20,7 +20,7 @@
       el.hidden = !unlocked;
     });
     document.querySelectorAll('[data-confidential-trigger]').forEach(btn => {
-      btn.textContent = unlocked ? 'Confidential info unlocked' : 'Unlock confidential info';
+      btn.innerHTML = `<span class="confidentialIcon" aria-hidden="true">${unlocked ? '🔓' : '🔒'}</span><span>${unlocked ? 'Confidential info unlocked' : 'Unlock confidential info'}</span>`;
       btn.setAttribute('aria-pressed', unlocked ? 'true' : 'false');
       btn.classList.toggle('unlocked', unlocked);
     });
